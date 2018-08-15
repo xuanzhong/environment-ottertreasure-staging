@@ -12,3 +12,21 @@ cleanup:
   Annotations:
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: hook-succeeded
+expose:
+  config:
+    domain: neweks.xuzhong.test.thunderhead.io
+    exposer: Ingress
+    http: "true"
+    tlsacme: "false"
+    pathMode: ""
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+jenkins:
+  Servers:
+    GHE:
+    - Name: CCBU
+      Url: https://sqbu-github.cisco.com/api/v3/
+    Global:
+      EnvVars:
+        DOCKER_REGISTRY: 667670341605.dkr.ecr.us-west-2.amazonaws.com
