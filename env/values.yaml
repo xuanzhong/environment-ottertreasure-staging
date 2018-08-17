@@ -24,9 +24,6 @@ expose:
     helm.sh/hook-delete-policy: hook-succeeded
 jenkins:
   Servers:
-    GHE:
-    - Name: CCBU
-      Url: https://sqbu-github.cisco.com/api/v3/
     Global:
       EnvVars:
         DOCKER_REGISTRY: 667670341605.dkr.ecr.us-west-2.amazonaws.com
